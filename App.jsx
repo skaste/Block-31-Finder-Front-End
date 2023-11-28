@@ -39,10 +39,12 @@ function App() {
 
   return (
     <div>
-      <h1>All Pets</h1>
+      <h1>Vet Pet List</h1>
       <ul>
         {pets.map((pet) => (
-          <div key={pet.id}>{pet.name}</div>
+          <div className="petList" key={pet.id}>
+            {pet.name}
+          </div>
         ))}
       </ul>
 
@@ -53,7 +55,9 @@ function App() {
           value={searchName}
           onChange={(e) => setSearchName(e.target.value)}
         />
-        <button onClick={handleSearchByName}>Search</button>
+        <button className="button" onClick={handleSearchByName}>
+          Search
+        </button>
         {foundPet && (
           <div>
             <h3>Found Pet</h3>
@@ -73,7 +77,9 @@ function App() {
           value={searchOwner}
           onChange={(e) => setSearchOwner(e.target.value)}
         />
-        <button onClick={handleSearchByOwner}>Search</button>
+        <button className="button" onClick={handleSearchByOwner}>
+          Search
+        </button>
         {foundPet && (
           <div>
             <h3>Found Pet</h3>
